@@ -73,6 +73,12 @@
       <DependentUpon>StaffEnterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Verification\StaffManager.cs" />
+    <EmbeddedResource Include="Administrator\AdministratorForm.resx">
+      <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Director\DirectorForm.resx">
+      <DependentUpon>DirectorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,6 +88,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Security\SecurityForm.resx">
+      <DependentUpon>SecurityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Verification\StaffEnterForm.resx">
       <DependentUpon>StaffEnterForm.cs</DependentUpon>
     </EmbeddedResource>

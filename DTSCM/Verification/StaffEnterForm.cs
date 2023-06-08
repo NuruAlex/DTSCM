@@ -16,7 +16,7 @@ namespace DTSCM.Verification
                 MessageBox.Show("Все данные должны быть введены");
                 return;
             }
-            if(!StaffManager.StaffIsExist(Password.Text,Posts.Text))
+            if(!StaffManager.StaffIsExist(Posts.Text,Password.Text))
             {
                 MessageBox.Show("Такого персонала не существует");
                 return;

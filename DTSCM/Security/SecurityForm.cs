@@ -16,5 +16,10 @@ namespace DTSCM.Security
         {
             InitializeComponent();
         }
+
+        private void SecurityForm_Load(object sender, EventArgs e)
+        {
+            FormClosed+=(s,ev)=>Application.Exit();
+        }
     }
 }

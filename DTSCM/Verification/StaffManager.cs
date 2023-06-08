@@ -36,15 +36,15 @@ namespace DTSCM.Verification
             switch(post)
             {
                 case "Охранник": return GetStaff<SqlDataBase.Tables.Staffs.Security>(post, password);
-                case "Директор":return GetStaff<SqlDataBase.Tables.Staffs.Director>(post, password); 
-                case "Администратор":return GetStaff<SqlDataBase.Tables.Staffs.Administrator>(post, password);
+                case "Директор": return GetStaff<SqlDataBase.Tables.Staffs.Director>(post, password); 
+                case "Администратор": return GetStaff<SqlDataBase.Tables.Staffs.Administrator>(post, password);
                 default: return null;
             }
         }
         private static IStaff GetStaff<T>(string post, string password)
         {
             List<T> Staffs = DataBase.ConvertToList<T>
-                   (DataBase.SelectRequestExecute($"select * from Staffs where Post ='{post}' and Password ='{password}'"));
+                   (DataBase.SelectRequestExecute($"select * from Staffs where Post ='{post}' and StaffPassword ='{password}'"));
             if (Staffs.Count == 1)
                 return (IStaff)Staffs[0];
             return null;

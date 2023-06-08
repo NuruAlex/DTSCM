@@ -16,5 +16,10 @@ namespace DTSCM.Director
         {
             InitializeComponent();
         }
+
+        private void DirectorForm_Load(object sender, EventArgs e)
+        {
+            FormClosed += (s, ev) => Application.Exit();
+        }
     }
 }
