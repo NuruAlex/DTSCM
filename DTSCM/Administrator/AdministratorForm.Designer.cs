@@ -39,16 +39,19 @@
             this.PersonalSettings = new System.Windows.Forms.Button();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ChildFormPanel = new System.Windows.Forms.Panel();
+            this.childFormPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SettingsSubMenu.SuspendLayout();
-            this.ChildFormPanel.SuspendLayout();
+            this.childFormPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(418, 214);
+            this.label1.Location = new System.Drawing.Point(198, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 13);
             this.label1.TabIndex = 0;
@@ -66,7 +69,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 481);
+            this.panel1.Size = new System.Drawing.Size(247, 481);
             this.panel1.TabIndex = 7;
             // 
             // ExitButton
@@ -75,7 +78,7 @@
             this.ExitButton.Location = new System.Drawing.Point(0, 367);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ExitButton.Size = new System.Drawing.Size(218, 35);
+            this.ExitButton.Size = new System.Drawing.Size(245, 35);
             this.ExitButton.TabIndex = 8;
             this.ExitButton.Text = "Выход ";
             this.ExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -87,7 +90,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 402);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(218, 77);
+            this.panel4.Size = new System.Drawing.Size(245, 77);
             this.panel4.TabIndex = 6;
             // 
             // StaffList
@@ -96,7 +99,7 @@
             this.StaffList.Location = new System.Drawing.Point(0, 191);
             this.StaffList.Name = "StaffList";
             this.StaffList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.StaffList.Size = new System.Drawing.Size(218, 35);
+            this.StaffList.Size = new System.Drawing.Size(245, 35);
             this.StaffList.TabIndex = 7;
             this.StaffList.Text = "Список пользователей";
             this.StaffList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -111,7 +114,7 @@
             this.SettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.SettingsSubMenu.Location = new System.Drawing.Point(0, 121);
             this.SettingsSubMenu.Name = "SettingsSubMenu";
-            this.SettingsSubMenu.Size = new System.Drawing.Size(218, 70);
+            this.SettingsSubMenu.Size = new System.Drawing.Size(245, 70);
             this.SettingsSubMenu.TabIndex = 6;
             // 
             // AccessLevelSettings
@@ -120,7 +123,7 @@
             this.AccessLevelSettings.Location = new System.Drawing.Point(0, 46);
             this.AccessLevelSettings.Name = "AccessLevelSettings";
             this.AccessLevelSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.AccessLevelSettings.Size = new System.Drawing.Size(218, 23);
+            this.AccessLevelSettings.Size = new System.Drawing.Size(245, 23);
             this.AccessLevelSettings.TabIndex = 2;
             this.AccessLevelSettings.Text = "Настройки уровней доступа";
             this.AccessLevelSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +136,7 @@
             this.FireDetectorSettings.Location = new System.Drawing.Point(0, 23);
             this.FireDetectorSettings.Name = "FireDetectorSettings";
             this.FireDetectorSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.FireDetectorSettings.Size = new System.Drawing.Size(218, 23);
+            this.FireDetectorSettings.Size = new System.Drawing.Size(245, 23);
             this.FireDetectorSettings.TabIndex = 1;
             this.FireDetectorSettings.Text = "Настройки объектов и извещателей";
             this.FireDetectorSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,7 +149,7 @@
             this.PersonalSettings.Location = new System.Drawing.Point(0, 0);
             this.PersonalSettings.Name = "PersonalSettings";
             this.PersonalSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.PersonalSettings.Size = new System.Drawing.Size(218, 23);
+            this.PersonalSettings.Size = new System.Drawing.Size(245, 23);
             this.PersonalSettings.TabIndex = 0;
             this.PersonalSettings.Text = "Персональные настройки";
             this.PersonalSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,7 +162,7 @@
             this.SettingsButton.Location = new System.Drawing.Point(0, 86);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingsButton.Size = new System.Drawing.Size(218, 35);
+            this.SettingsButton.Size = new System.Drawing.Size(245, 35);
             this.SettingsButton.TabIndex = 6;
             this.SettingsButton.Text = "Настройки";
             this.SettingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,32 +174,32 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 86);
+            this.panel2.Size = new System.Drawing.Size(245, 86);
             this.panel2.TabIndex = 6;
             // 
-            // ChildFormPanel
+            // childFormPanel
             // 
-            this.ChildFormPanel.Controls.Add(this.label1);
-            this.ChildFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChildFormPanel.Location = new System.Drawing.Point(0, 0);
-            this.ChildFormPanel.Name = "ChildFormPanel";
-            this.ChildFormPanel.Size = new System.Drawing.Size(887, 481);
-            this.ChildFormPanel.TabIndex = 8;
+            this.childFormPanel.Controls.Add(this.label1);
+            this.childFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.childFormPanel.Location = new System.Drawing.Point(247, 0);
+            this.childFormPanel.Name = "childFormPanel";
+            this.childFormPanel.Size = new System.Drawing.Size(640, 481);
+            this.childFormPanel.TabIndex = 8;
             // 
             // AdministratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 481);
+            this.Controls.Add(this.childFormPanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ChildFormPanel);
             this.Name = "AdministratorForm";
             this.Text = "AdministratorForm";
             this.Load += new System.EventHandler(this.AdministratorForm_Load);
             this.panel1.ResumeLayout(false);
             this.SettingsSubMenu.ResumeLayout(false);
-            this.ChildFormPanel.ResumeLayout(false);
-            this.ChildFormPanel.PerformLayout();
+            this.childFormPanel.ResumeLayout(false);
+            this.childFormPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -214,6 +217,6 @@
         private System.Windows.Forms.Button PersonalSettings;
         private System.Windows.Forms.Button SettingsButton;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel ChildFormPanel;
+        private System.Windows.Forms.Panel childFormPanel;
     }
 }

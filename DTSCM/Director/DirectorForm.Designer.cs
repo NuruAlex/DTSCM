@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.SettingsButton = new System.Windows.Forms.Button();
-            this.SettingsSubMenu = new System.Windows.Forms.Panel();
-            this.StaffList = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.PersonalSettings = new System.Windows.Forms.Button();
-            this.FireDetectorSettings = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.StaffList = new System.Windows.Forms.Button();
+            this.SettingsSubMenu = new System.Windows.Forms.Panel();
             this.AccessLevelSettings = new System.Windows.Forms.Button();
+            this.FireDetectorSettings = new System.Windows.Forms.Button();
+            this.PersonalSettings = new System.Windows.Forms.Button();
+            this.SettingsButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.ChildFormPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -57,29 +57,42 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 481);
+            this.panel1.Size = new System.Drawing.Size(245, 481);
             this.panel1.TabIndex = 5;
             // 
-            // panel2
+            // ExitButton
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 86);
-            this.panel2.TabIndex = 6;
+            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ExitButton.Location = new System.Drawing.Point(0, 367);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ExitButton.Size = new System.Drawing.Size(243, 35);
+            this.ExitButton.TabIndex = 8;
+            this.ExitButton.Text = "Выход ";
+            this.ExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // SettingsButton
+            // panel4
             // 
-            this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingsButton.Location = new System.Drawing.Point(0, 86);
-            this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.SettingsButton.Size = new System.Drawing.Size(218, 35);
-            this.SettingsButton.TabIndex = 6;
-            this.SettingsButton.Text = "Настройки";
-            this.SettingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SettingsButton.UseVisualStyleBackColor = true;
-            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 402);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(243, 77);
+            this.panel4.TabIndex = 6;
+            // 
+            // StaffList
+            // 
+            this.StaffList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.StaffList.Location = new System.Drawing.Point(0, 191);
+            this.StaffList.Name = "StaffList";
+            this.StaffList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.StaffList.Size = new System.Drawing.Size(243, 35);
+            this.StaffList.TabIndex = 7;
+            this.StaffList.Text = "Список пользователей";
+            this.StaffList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.StaffList.UseVisualStyleBackColor = true;
+            this.StaffList.Click += new System.EventHandler(this.StaffList_Click);
             // 
             // SettingsSubMenu
             // 
@@ -89,68 +102,8 @@
             this.SettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.SettingsSubMenu.Location = new System.Drawing.Point(0, 121);
             this.SettingsSubMenu.Name = "SettingsSubMenu";
-            this.SettingsSubMenu.Size = new System.Drawing.Size(218, 70);
+            this.SettingsSubMenu.Size = new System.Drawing.Size(243, 70);
             this.SettingsSubMenu.TabIndex = 6;
-            // 
-            // StaffList
-            // 
-            this.StaffList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.StaffList.Location = new System.Drawing.Point(0, 191);
-            this.StaffList.Name = "StaffList";
-            this.StaffList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.StaffList.Size = new System.Drawing.Size(218, 35);
-            this.StaffList.TabIndex = 7;
-            this.StaffList.Text = "Список пользователей";
-            this.StaffList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StaffList.UseVisualStyleBackColor = true;
-            this.StaffList.Click += new System.EventHandler(this.StaffList_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 402);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(218, 77);
-            this.panel4.TabIndex = 6;
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ExitButton.Location = new System.Drawing.Point(0, 367);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ExitButton.Size = new System.Drawing.Size(218, 35);
-            this.ExitButton.TabIndex = 8;
-            this.ExitButton.Text = "Выход ";
-            this.ExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // PersonalSettings
-            // 
-            this.PersonalSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PersonalSettings.Location = new System.Drawing.Point(0, 0);
-            this.PersonalSettings.Name = "PersonalSettings";
-            this.PersonalSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.PersonalSettings.Size = new System.Drawing.Size(218, 23);
-            this.PersonalSettings.TabIndex = 0;
-            this.PersonalSettings.Text = "Персональные настройки";
-            this.PersonalSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PersonalSettings.UseVisualStyleBackColor = true;
-            this.PersonalSettings.Click += new System.EventHandler(this.PersonalSettings_Click);
-            // 
-            // FireDetectorSettings
-            // 
-            this.FireDetectorSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FireDetectorSettings.Location = new System.Drawing.Point(0, 23);
-            this.FireDetectorSettings.Name = "FireDetectorSettings";
-            this.FireDetectorSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.FireDetectorSettings.Size = new System.Drawing.Size(218, 23);
-            this.FireDetectorSettings.TabIndex = 1;
-            this.FireDetectorSettings.Text = "Настройки объектов и извещателей";
-            this.FireDetectorSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FireDetectorSettings.UseVisualStyleBackColor = true;
-            this.FireDetectorSettings.Click += new System.EventHandler(this.FireDetectorSettings_Click);
             // 
             // AccessLevelSettings
             // 
@@ -158,20 +111,67 @@
             this.AccessLevelSettings.Location = new System.Drawing.Point(0, 46);
             this.AccessLevelSettings.Name = "AccessLevelSettings";
             this.AccessLevelSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.AccessLevelSettings.Size = new System.Drawing.Size(218, 23);
+            this.AccessLevelSettings.Size = new System.Drawing.Size(243, 23);
             this.AccessLevelSettings.TabIndex = 2;
             this.AccessLevelSettings.Text = "Настройки уровней доступа";
             this.AccessLevelSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AccessLevelSettings.UseVisualStyleBackColor = true;
             this.AccessLevelSettings.Click += new System.EventHandler(this.AccessLevelSettings_Click);
             // 
+            // FireDetectorSettings
+            // 
+            this.FireDetectorSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FireDetectorSettings.Location = new System.Drawing.Point(0, 23);
+            this.FireDetectorSettings.Name = "FireDetectorSettings";
+            this.FireDetectorSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.FireDetectorSettings.Size = new System.Drawing.Size(243, 23);
+            this.FireDetectorSettings.TabIndex = 1;
+            this.FireDetectorSettings.Text = "Настройки объектов и извещателей";
+            this.FireDetectorSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FireDetectorSettings.UseVisualStyleBackColor = true;
+            this.FireDetectorSettings.Click += new System.EventHandler(this.FireDetectorSettings_Click);
+            // 
+            // PersonalSettings
+            // 
+            this.PersonalSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PersonalSettings.Location = new System.Drawing.Point(0, 0);
+            this.PersonalSettings.Name = "PersonalSettings";
+            this.PersonalSettings.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.PersonalSettings.Size = new System.Drawing.Size(243, 23);
+            this.PersonalSettings.TabIndex = 0;
+            this.PersonalSettings.Text = "Персональные настройки";
+            this.PersonalSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PersonalSettings.UseVisualStyleBackColor = true;
+            this.PersonalSettings.Click += new System.EventHandler(this.PersonalSettings_Click);
+            // 
+            // SettingsButton
+            // 
+            this.SettingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SettingsButton.Location = new System.Drawing.Point(0, 86);
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.SettingsButton.Size = new System.Drawing.Size(243, 35);
+            this.SettingsButton.TabIndex = 6;
+            this.SettingsButton.Text = "Настройки";
+            this.SettingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SettingsButton.UseVisualStyleBackColor = true;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(243, 86);
+            this.panel2.TabIndex = 6;
+            // 
             // ChildFormPanel
             // 
             this.ChildFormPanel.Controls.Add(this.label1);
             this.ChildFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChildFormPanel.Location = new System.Drawing.Point(220, 0);
+            this.ChildFormPanel.Location = new System.Drawing.Point(245, 0);
             this.ChildFormPanel.Name = "ChildFormPanel";
-            this.ChildFormPanel.Size = new System.Drawing.Size(667, 481);
+            this.ChildFormPanel.Size = new System.Drawing.Size(663, 481);
             this.ChildFormPanel.TabIndex = 6;
             // 
             // label1
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 481);
+            this.ClientSize = new System.Drawing.Size(908, 481);
             this.Controls.Add(this.ChildFormPanel);
             this.Controls.Add(this.panel1);
             this.Name = "DirectorForm";

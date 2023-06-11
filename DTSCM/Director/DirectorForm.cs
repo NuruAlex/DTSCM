@@ -46,7 +46,7 @@ namespace DTSCM.Director
 
         private void AccessLevelSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Находится на этапе разработки");
+            OpenChildForm(new Administrator.AccessLevelForm());
             HideSubMenu();
         }
 
@@ -57,7 +57,7 @@ namespace DTSCM.Director
 
         private void StaffList_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Находится на этапе разработки");
+            OpenChildForm(new Administrator.StaffListForm());
         }
     }
 }

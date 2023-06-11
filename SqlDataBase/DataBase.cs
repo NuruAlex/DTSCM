@@ -152,6 +152,7 @@ namespace SqlDataBase
                     return (IStaff)Staffs[0];
                 return null;
             }
+            public static DataTable Staffs() => SelectRequestExecute("select * from Staffs");
             public static string StaffPostByLogin(string login)
             {
                 List<string> posts = ConvertToList(SelectRequestExecute($"select Post from Staffs where StaffLogin ='{login}'"),"Post");

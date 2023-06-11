@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrator\AccessLevelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\AccessLevelForm.Designer.cs">
+      <DependentUpon>AccessLevelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Administrator\AdministratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Administrator\AdministratorForm.Designer.cs">
       <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator\StaffListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrator\StaffListForm.Designer.cs">
+      <DependentUpon>StaffListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Director\DirectorForm.cs">
       <SubType>Form</SubType>
@@ -79,8 +91,14 @@
       <DependentUpon>StaffEnterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Verification\StaffManager.cs" />
+    <EmbeddedResource Include="Administrator\AccessLevelForm.resx">
+      <DependentUpon>AccessLevelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Administrator\AdministratorForm.resx">
       <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrator\StaffListForm.resx">
+      <DependentUpon>StaffListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Director\DirectorForm.resx">
       <DependentUpon>DirectorForm.cs</DependentUpon>

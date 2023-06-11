@@ -21,8 +21,8 @@ namespace DTSCM.Administrator
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            ChildFormPanel.Controls.Add(childForm);
-            ChildFormPanel.Tag = childForm;
+            childFormPanel.Controls.Add(childForm);
+            childFormPanel.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -41,13 +41,13 @@ namespace DTSCM.Administrator
 
         private void StaffList_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Находится на этапе разработки");
+            OpenChildForm(new StaffListForm());
             HideSubMenu();
         }
 
         private void AccessLevelSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Находится на этапе разработки");
+            OpenChildForm(new AccessLevelForm());
             HideSubMenu();
         }
 
