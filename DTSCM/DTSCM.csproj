@@ -66,6 +66,12 @@
     <Compile Include="Security\SecurityForm.Designer.cs">
       <DependentUpon>SecurityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Verification\ChosingActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Verification\ChosingActionForm.Designer.cs">
+      <DependentUpon>ChosingActionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Verification\StaffEnterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,9 +79,6 @@
       <DependentUpon>StaffEnterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Verification\StaffManager.cs" />
-    <EmbeddedResource Include="Administrator\AdministratorForm.resx">
-      <DependentUpon>AdministratorForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Director\DirectorForm.resx">
       <DependentUpon>DirectorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="Security\SecurityForm.resx">
       <DependentUpon>SecurityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Verification\ChosingActionForm.resx">
+      <DependentUpon>ChosingActionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Verification\StaffEnterForm.resx">
       <DependentUpon>StaffEnterForm.cs</DependentUpon>

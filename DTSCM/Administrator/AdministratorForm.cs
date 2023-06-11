@@ -16,10 +16,5 @@ namespace DTSCM.Administrator
         {
             InitializeComponent();
         }
-
-        private void AdministratorForm_Load(object sender, EventArgs e)
-        {
-            FormClosed += (s, ev) => Application.Exit();
-        }
     }
 }

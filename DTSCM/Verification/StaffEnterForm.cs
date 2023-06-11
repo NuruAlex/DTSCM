@@ -1,5 +1,4 @@
 ﻿using System;
-using SqlDataBase;
 using System.Windows.Forms;
 
 namespace DTSCM.Verification
@@ -8,26 +7,33 @@ namespace DTSCM.Verification
     {
         public StaffEnterForm() => InitializeComponent();
 
-
+        public bool passed = false;
         private void EnterButton_Click(object sender, EventArgs e)
         {
-            if(Password.Text == "" || Posts.SelectedItem == null)
+            if (login.Text == "" || password.Text == "")
             {
                 MessageBox.Show("Все данные должны быть введены");
+                new ChosingActionForm().Show();
+                Hide();
                 return;
             }
-            if(!StaffManager.StaffIsExist(Posts.Text,Password.Text))
+            if (!StaffManager.StaffIsExist(login.Text, password.Text))
             {
                 MessageBox.Show("Такого персонала не существует");
+                new ChosingActionForm().Show();
+                Hide();
                 return;
             }
             StaffManager.Enter();
+            Hide();
         }
 
-        private void StaffEnterForm_Load(object sender, EventArgs e)
+        private void StaffEnterForm_Load(object sender, EventArgs e) => FormClosed += (s, ev) => Application.Exit();
+
+        private void ExitButton_Click(object sender, EventArgs e)
         {
-            FormClosed += (s, ev) => Application.Exit();
-            Posts.Items.AddRange(DataBase.Get.Posts().ToArray());
+            new ChosingActionForm().Show();
+            Hide();
         }
     }
 }

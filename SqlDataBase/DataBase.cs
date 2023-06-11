@@ -1,9 +1,11 @@
 ﻿using SqlDataBase.Tables;
+using SqlDataBase.Tables.Staffs;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Runtime.Remoting.Messaging;
 
 namespace SqlDataBase
 {
@@ -133,7 +135,7 @@ namespace SqlDataBase
             public static void Detector(FireDetector fireDetector)//требует обдумывания, пока в разработке
             {
                 NonQueryRequestExecuteAsync
-                    ($"insert into FireDetectors values '({fireDetector.Model})', {fireDetector.ChannelAmount}, {fireDetector.MaxChanelLength}");
+                    ($"insert into FireDetectors values '({fireDetector.Model})', {fireDetector.ChannelAmount}, {fireDetector.MaxChannelLength}");
 
                 foreach (Channel channel in fireDetector.Channels)
                     NonQueryRequestExecuteAsync
@@ -142,6 +144,22 @@ namespace SqlDataBase
         }
         public static class Get
         {
+            public static IStaff Staff<T>(string login,string password)
+            {
+                List<T> Staffs = ConvertToList<T>
+                  (SelectRequestExecute($"select * from Staffs where StaffLogin ='{login}' and StaffPassword ='{password}'"));
+                if (Staffs.Count == 1)
+                    return (IStaff)Staffs[0];
+                return null;
+            }
+            public static string StaffPostByLogin(string login)
+            {
+                List<string> posts = ConvertToList(SelectRequestExecute($"select Post from Staffs where StaffLogin ='{login}'"),"Post");
+               
+                if(posts.Count == 1)
+                    return posts[0];
+                return null;
+            }
             public static List<string> Posts() => ConvertToList(SelectRequestExecute("select * from Posts"), "Title");
         }
         public static class Delete

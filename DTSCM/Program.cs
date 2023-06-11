@@ -16,7 +16,7 @@ namespace DTSCM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DataBase.InitConnection();
-            Application.Run(new StaffEnterForm());
+            Application.Run(new ChosingActionForm());
         }
     }
 }
