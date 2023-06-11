@@ -79,6 +79,9 @@
       <DependentUpon>StaffEnterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Verification\StaffManager.cs" />
+    <EmbeddedResource Include="Administrator\AdministratorForm.resx">
+      <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Director\DirectorForm.resx">
       <DependentUpon>DirectorForm.cs</DependentUpon>
     </EmbeddedResource>

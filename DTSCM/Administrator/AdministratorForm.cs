@@ -1,20 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DTSCM.Administrator
 {
     public partial class AdministratorForm : Form
     {
-        public AdministratorForm()
+        private Form _currentChildForm = null;
+        public AdministratorForm() => InitializeComponent();
+
+        private void SettingsButton_Click(object sender, EventArgs e) => SettingsSubMenu.Visible = true;
+
+        private void HideSubMenu() => SettingsSubMenu.Visible = false;
+
+        private void OpenChildForm(Form childForm)
         {
-            InitializeComponent();
+            if (_currentChildForm != null)
+                _currentChildForm.Close();
+
+            _currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            ChildFormPanel.Controls.Add(childForm);
+            ChildFormPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void FireDetectorSettings_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Находится на этапе разработки");
+            HideSubMenu();
+        }
+
+        private void PersonalSettings_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Находится на этапе разработки");
+            HideSubMenu();
+        }
+
+        private void StaffList_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Находится на этапе разработки");
+            HideSubMenu();
+        }
+
+        private void AccessLevelSettings_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Находится на этапе разработки");
+            HideSubMenu();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e) => Application.Exit();
+
+        private void AdministratorForm_Load(object sender, EventArgs e)
+        {
+            FormClosed += (s, ev) => Application.Exit();
+            SettingsSubMenu.Visible = false;
         }
     }
 }
