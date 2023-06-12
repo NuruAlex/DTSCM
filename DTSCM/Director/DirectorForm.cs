@@ -14,7 +14,6 @@ namespace DTSCM.Director
             Icon = Properties.Resources.Icon;
         }
 
-
         private void SettingsButton_Click(object sender, EventArgs e) => SettingsSubMenu.Visible = true;
 
         private void HideSubMenu() => SettingsSubMenu.Visible = false;

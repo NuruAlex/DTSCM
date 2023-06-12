@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.StaffTable = new System.Windows.Forms.DataGridView();
-            this.ExitButton = new System.Windows.Forms.Button();
             this.AddStaffButton = new System.Windows.Forms.Button();
             this.ChangeStaffButton = new System.Windows.Forms.Button();
             this.DeleteStaffButton = new System.Windows.Forms.Button();
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.StaffLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccessLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastDateEntered = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,16 +52,6 @@
             this.StaffTable.Name = "StaffTable";
             this.StaffTable.Size = new System.Drawing.Size(616, 258);
             this.StaffTable.TabIndex = 0;
-            // 
-            // ExitButton
-            // 
-            this.ExitButton.Location = new System.Drawing.Point(12, 12);
-            this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(75, 23);
-            this.ExitButton.TabIndex = 1;
-            this.ExitButton.Text = "X";
-            this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // AddStaffButton
             // 
@@ -113,6 +103,16 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(9, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Список пользователей:";
+            // 
             // StaffLogin
             // 
             this.StaffLogin.HeaderText = "Логин";
@@ -122,6 +122,9 @@
             // 
             this.AccessLevel.HeaderText = "Уровень доступа";
             this.AccessLevel.Name = "AccessLevel";
+            this.AccessLevel.ReadOnly = true;
+            this.AccessLevel.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccessLevel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // LastDateEntered
             // 
@@ -134,12 +137,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 481);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.DeleteStaffButton);
             this.Controls.Add(this.ChangeStaffButton);
             this.Controls.Add(this.AddStaffButton);
-            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.StaffTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StaffListForm";
@@ -147,18 +150,19 @@
             this.Load += new System.EventHandler(this.StaffListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StaffTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView StaffTable;
-        private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button AddStaffButton;
         private System.Windows.Forms.Button ChangeStaffButton;
         private System.Windows.Forms.Button DeleteStaffButton;
         private System.Windows.Forms.Button SaveChangesButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn StaffLogin;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccessLevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastDateEntered;

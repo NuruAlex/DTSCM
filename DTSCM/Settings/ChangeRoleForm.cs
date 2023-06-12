@@ -27,13 +27,6 @@ namespace DTSCM.Settings
         }
         private void LoadRole(string roleTitle)
         {
-            AccessRole role = DataBase.Get.AccessRoleByTitle(roleTitle);
-            if (role != null)
-            {
-                Comments.Text = role.Comments;
-                return;
-            }
-
             AccessRole updatedRole = AccessLevelForm.changedRoles.Find(i => i.Title == roleTitle);
             if (updatedRole != null)
             {
@@ -41,6 +34,14 @@ namespace DTSCM.Settings
                 Comments.Text = updatedRole.Comments;
                 return;
             }
+
+            AccessRole role = DataBase.Get.AccessRoleByTitle(roleTitle);
+            if (role != null)
+            {
+                Comments.Text = role.Comments;
+                return;
+            }
+
             AccessRole addedrole = AccessLevelForm.addedRoles.Find(i => i.Title == roleTitle);
             Title.Text = addedrole.Title;
             Comments.Text = addedrole.Comments;
@@ -74,6 +75,12 @@ namespace DTSCM.Settings
                 if (Title.Text == AccessLevelForm.changedRoles[i].Title)
                     AccessLevelForm.changedRoles[i].Comments = Comments.Text;
             Hide();
+        }
+
+        private void ChangeRoleForm_Load(object sender, EventArgs e)
+        {
+            FormClosed += (s, ev) => Hide();
+            Icon = Properties.Resources.Icon;
         }
     }
 }

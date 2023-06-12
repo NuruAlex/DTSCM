@@ -12,10 +12,7 @@ namespace SqlDataBase
     {
         private static SqlConnection _connection;
 
-        public static void InitConnection()
-        {
-            _connection = new SqlConnection($"Server ={Environment.MachineName}\\SQLEXPRESS;Database = DTSCM;Trusted_Connection=True;");
-        }
+        public static void InitConnection() => _connection = new SqlConnection($"Server ={Environment.MachineName}\\SQLEXPRESS;Database = DTSCM;Trusted_Connection=True;");
         public static void OpenConnection()
         {
             try
@@ -130,6 +127,11 @@ namespace SqlDataBase
             public static void StaffPassword(string staffLogin, string newPassword) => NonQueryRequestExecuteAsync($"update Staffs set StaffPassword ='{newPassword}' where StaffLogin ='{staffLogin}'");
             public static void Role(AccessRole role) => NonQueryRequestExecuteAsync($"update AccessLevels set Comments = '{role.Comments}' where Title = '{role.Title}')");
 
+            public static void Staff(IStaff staff) => NonQueryRequestExecuteAsync($"update Staffs set " +
+                $" Initials ='{staff.Initials}'" +
+                $" StaffPassword ='{staff.StaffPassword}'" +
+                $" Post ='{staff.Post}'" +
+                $" AccessLevel ='{staff.AccessLevel}' where StaffLogin = '{staff.StaffLogin}'");
         }
         public static class Add
         {
@@ -142,6 +144,7 @@ namespace SqlDataBase
                     NonQueryRequestExecuteAsync
                         ($"insert into Channels values({channel.DetectorId}, '{channel.Title}', {channel.CurrentLength}, {channel.IsActive})");
             }
+            public static void Staff(IStaff staff) => NonQueryRequestExecuteAsync($"insert into Staffs values('{staff.StaffLogin}','{staff.Initials}','{staff.StaffPassword}','{staff.Post}','{staff.AccessLevel}',NULL)");
             public static void Role(AccessRole role) => NonQueryRequestExecuteAsync($"insert into AccessLevels values ('{role.Title}','{role.Comments}')");
         }
 
@@ -156,6 +159,13 @@ namespace SqlDataBase
                 return null;
             }
             public static List<Director> Staffs() => ConvertToList<Director>(SelectRequestExecute("select * from Staffs"));
+            public static IStaff StaffByLogin<T>(string login)
+            {
+                List<T> staffs = ConvertToList<T>(SelectRequestExecute($"select * from Staffs where StaffLogin ='{login}'"));
+                if (staffs.Count == 1)
+                    return (IStaff)staffs[0];
+                return null;
+            }
             public static string StaffPostByLogin(string login)
             {
                 List<string> posts = ConvertToList(SelectRequestExecute($"select Post from Staffs where StaffLogin ='{login}'"), "Post");
@@ -175,14 +185,11 @@ namespace SqlDataBase
                     return roles[0];
                 return null;
             }
-
         }
         public static class Delete
         {
-            public static void Staff(IStaff staff)
-            {
+            public static void Staff(IStaff staff) => NonQueryRequestExecuteAsync($"delete from Staffs where StaffLogin ='{staff.StaffLogin}'");
 
-            }
             public static void Role(AccessRole role)
             {
                 NonQueryRequestExecuteAsync($"update Staffs set AccessLevel = '' where AccessLevel='{role.Title}'");
@@ -191,6 +198,7 @@ namespace SqlDataBase
         }
     }
 }
+
 
 
 

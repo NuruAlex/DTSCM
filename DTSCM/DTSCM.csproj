@@ -64,6 +64,12 @@
     <Compile Include="Settings\ChangeRoleForm.Designer.cs">
       <DependentUpon>ChangeRoleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings\ChangeStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\ChangeStaffForm.Designer.cs">
+      <DependentUpon>ChangeStaffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings\StaffListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\ChangeRoleForm.resx">
       <DependentUpon>ChangeRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\ChangeStaffForm.resx">
+      <DependentUpon>ChangeStaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\StaffListForm.resx">
       <DependentUpon>StaffListForm.cs</DependentUpon>
