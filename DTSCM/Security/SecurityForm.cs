@@ -19,7 +19,9 @@ namespace DTSCM.Security
 
         private void SecurityForm_Load(object sender, EventArgs e)
         {
-            FormClosed+=(s,ev)=>Application.Exit();
+            FormClosed += (s, ev) => Application.Exit();
+            Icon = Properties.Resources.Icon;
         }
+
     }
 }

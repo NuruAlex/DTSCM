@@ -1,4 +1,6 @@
-﻿namespace SqlDataBase.Tables.Staffs
+﻿using System;
+
+namespace SqlDataBase.Tables.Staffs
 {
     public class Administrator : IStaff
     {
@@ -7,5 +9,7 @@
         public string Initials { get; set; }
         public string StaffPassword { get; set; }
         public string Post { get; set; }
+        public string AccessLevel { get; set; }
+        public DateTime LastDateEntered { get; set; }
     }
 }

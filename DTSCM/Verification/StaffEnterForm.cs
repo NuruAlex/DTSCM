@@ -28,8 +28,11 @@ namespace DTSCM.Verification
             Hide();
         }
 
-        private void StaffEnterForm_Load(object sender, EventArgs e) => FormClosed += (s, ev) => Application.Exit();
-
+        private void StaffEnterForm_Load(object sender, EventArgs e)
+        {
+            FormClosed += (s, ev) => Application.Exit();
+            Icon = Properties.Resources.Icon;
+        }
         private void ExitButton_Click(object sender, EventArgs e)
         {
             new ChosingActionForm().Show();

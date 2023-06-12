@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DTSCM.Verification
@@ -14,6 +15,10 @@ namespace DTSCM.Verification
         }
         private void ExitButton_Click(object sender, EventArgs e) => Application.Exit();
 
-        private void ChosingActionForm_Load(object sender, EventArgs e) => FormClosed += (s, ev) => Application.Exit();
+        private void ChosingActionForm_Load(object sender, EventArgs e)
+        {
+            FormClosed += (s, ev) => Application.Exit();
+            Icon = Properties.Resources.Icon;
+        }
     }
 }

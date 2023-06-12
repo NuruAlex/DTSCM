@@ -11,7 +11,9 @@ namespace DTSCM.Director
         {
             FormClosed += (s, ev) => Application.Exit();
             SettingsSubMenu.Visible = false;
+            Icon = Properties.Resources.Icon;
         }
+
 
         private void SettingsButton_Click(object sender, EventArgs e) => SettingsSubMenu.Visible = true;
 
@@ -34,7 +36,7 @@ namespace DTSCM.Director
       
         private void PersonalSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Находится на этапе разработки");
+            OpenChildForm(new Settings.PersonalSettingForm());
             HideSubMenu();
         }
 
@@ -46,7 +48,7 @@ namespace DTSCM.Director
 
         private void AccessLevelSettings_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Administrator.AccessLevelForm());
+            OpenChildForm(new Settings.AccessLevelForm());
             HideSubMenu();
         }
 

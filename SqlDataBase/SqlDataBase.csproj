@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="DataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\AccessRoles.cs" />
     <Compile Include="Tables\Channel.cs" />
     <Compile Include="Tables\EventLog.cs" />
     <Compile Include="Tables\FireDetector.cs" />

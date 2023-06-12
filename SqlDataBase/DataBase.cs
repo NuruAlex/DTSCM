@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
-using System.Runtime.Remoting.Messaging;
 
 namespace SqlDataBase
 {
@@ -128,6 +127,8 @@ namespace SqlDataBase
 
         public static class Update
         {
+            public static void StaffPassword(string staffLogin, string newPassword) => NonQueryRequestExecuteAsync($"update Staffs set StaffPassword ='{newPassword}' where StaffLogin ='{staffLogin}'");
+            public static void Role(AccessRole role) => NonQueryRequestExecuteAsync($"update AccessLevels set Comments = '{role.Comments}' where Title = '{role.Title}')");
 
         }
         public static class Add
@@ -141,10 +142,12 @@ namespace SqlDataBase
                     NonQueryRequestExecuteAsync
                         ($"insert into Channels values({channel.DetectorId}, '{channel.Title}', {channel.CurrentLength}, {channel.IsActive})");
             }
+            public static void Role(AccessRole role) => NonQueryRequestExecuteAsync($"insert into AccessLevels values ('{role.Title}','{role.Comments}')");
         }
+
         public static class Get
         {
-            public static IStaff Staff<T>(string login,string password)
+            public static IStaff Staff<T>(string login, string password)
             {
                 List<T> Staffs = ConvertToList<T>
                   (SelectRequestExecute($"select * from Staffs where StaffLogin ='{login}' and StaffPassword ='{password}'"));
@@ -152,21 +155,42 @@ namespace SqlDataBase
                     return (IStaff)Staffs[0];
                 return null;
             }
-            public static DataTable Staffs() => SelectRequestExecute("select * from Staffs");
+            public static List<Director> Staffs() => ConvertToList<Director>(SelectRequestExecute("select * from Staffs"));
             public static string StaffPostByLogin(string login)
             {
-                List<string> posts = ConvertToList(SelectRequestExecute($"select Post from Staffs where StaffLogin ='{login}'"),"Post");
-               
-                if(posts.Count == 1)
+                List<string> posts = ConvertToList(SelectRequestExecute($"select Post from Staffs where StaffLogin ='{login}'"), "Post");
+
+                if (posts.Count == 1)
                     return posts[0];
                 return null;
             }
             public static List<string> Posts() => ConvertToList(SelectRequestExecute("select * from Posts"), "Title");
+
+            public static List<AccessRole> Roles() => ConvertToList<AccessRole>(SelectRequestExecute("select * from AccessLevels"));
+
+            public static AccessRole AccessRoleByTitle(string Title)
+            {
+                List<AccessRole> roles = ConvertToList<AccessRole>(SelectRequestExecute($"select * from AccessLevels where Title ='{Title}'"));
+                if (roles.Count == 1)
+                    return roles[0];
+                return null;
+            }
+
         }
         public static class Delete
         {
+            public static void Staff(IStaff staff)
+            {
 
+            }
+            public static void Role(AccessRole role)
+            {
+                NonQueryRequestExecuteAsync($"update Staffs set AccessLevel = '' where AccessLevel='{role.Title}'");
+                NonQueryRequestExecuteAsync($"delete from AccessLevels where Title ='{role.Title}'");
+            }
         }
     }
 }
+
+
 
