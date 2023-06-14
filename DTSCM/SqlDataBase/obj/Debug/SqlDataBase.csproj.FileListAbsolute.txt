@@ -1,6 +1,0 @@
-C:\Users\Aleksej\source\repos\DTSCM\SqlDataBase\bin\Debug\SqlDataBase.dll
-C:\Users\Aleksej\source\repos\DTSCM\SqlDataBase\bin\Debug\SqlDataBase.pdb
-C:\Users\Aleksej\source\repos\DTSCM\SqlDataBase\obj\Debug\SqlDataBase.csproj.AssemblyReference.cache
-C:\Users\Aleksej\source\repos\DTSCM\SqlDataBase\obj\Debug\SqlDataBase.csproj.CoreCompileInputs.cache
-C:\Users\Aleksej\source\repos\DTSCM\SqlDataBase\obj\Debug\SqlDataBase.dll
-C:\Users\Aleksej\source\repos\DTSCM\SqlDataBase\obj\Debug\SqlDataBase.pdb
